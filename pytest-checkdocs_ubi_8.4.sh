@@ -17,7 +17,7 @@
 #!/bin/bash
 
 if [ -z "$1" ]; then
-  export VERSION=master
+  export VERSION=main
 else
   export VERSION=$1
 fi
@@ -30,6 +30,8 @@ fi
 sudo dnf install -y python36
 sudo dnf install -y git
 sudo dnf install -y wget
+yum update
+yum install -y git python36 make python3-devel gcc gcc-c++
 
 # Download the repos
 git clone https://github.com/jaraco/pytest-checkdocs
